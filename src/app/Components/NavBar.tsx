@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { useState,useEffect } from 'react'
+import { FileCheck,NotebookPen,Github ,Phone } from 'lucide-react';
 interface justprops{
    open:boolean
 }
@@ -29,19 +30,23 @@ const NavBar = () => {
 
         <div className="bg-nav-bg backdrop-filter backdrop-blur-44 p-4 rounded-lg flex justify-between">
          <div className='item-center flex p-0'>
-            <Image width={40} height={40} className='z-0 absolute object-fit' 
-                src="/LOGO.png" 
-                alt="pic"/>
+            
          </div>
          <div>
          {isSmallScreen ? (
-              <div>Hello, world!</div>
+              <nav className='ml-[15px] relative flex justify-between gap-3'>
+              <Link className='block relative font-semibold leading-5 text-base opacity-100 text-white-bg' href="./TechStack"><FileCheck /></Link>
+              <Link className='block relative font-semibold leading-5 text-base' href="/TechStack"><NotebookPen/></Link>
+              <Link className='block relative font-semibold leading-5 text-base' href="/TechStack"><Github/></Link>
+              <Link className='block relative font-semibold leading-5 text-base' href="/TechStack"><Phone/></Link>
+              
+           </nav>
             ) : (
                <nav className='ml-[15px] relative flex justify-between gap-3'>
-               <Link className='block relative font-semibold leading-5 text-base' href="./TechStack">Tech Stack</Link>
                <Link className='block relative font-semibold leading-5 text-base' href="./TechStack">Projects</Link>
-               <Link className='block relative font-semibold leading-5 text-base' href="./TechStack">Education</Link>
-               <Link className='block relative font-semibold leading-5 text-base' href="./TechStack">GitHub</Link>
+               <Link className='block relative font-semibold leading-5 text-base' href="./TechStack">Resume</Link>
+               <Link className='block relative font-semibold leading-5 text-base' href="./TechStack">Github</Link>
+               <Link className='block relative font-semibold leading-5 text-base' href="./TechStack">Contact</Link>
                
             </nav>
             )}
