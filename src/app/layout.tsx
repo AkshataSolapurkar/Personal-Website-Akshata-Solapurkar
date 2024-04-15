@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="p-0 m-0 relative box-border bg-black-bg text-white-text font-sans overflow-hidden">
+      <body className="p-0 m-0 gYisCF relative box-border bg-black-bg text-white-text font-sans overflow-hidden">
        <NavBar/> 
        {children}
        <Footer/>

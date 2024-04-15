@@ -47,6 +47,18 @@
   }
 }
 
+@keyframes slide-in-bck-center {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .gYisCF {
   position: relative;
   min-height: 100vh;
@@ -63,4 +75,90 @@
 }
 .scale-92 {
   transform: scale(0.92);
+}
+
+.nav-projects:hover::after {
+  content: "Projects";
+  position: absolute;
+  background-color:rgba(28, 22, 47, .3); /* Tooltip background color */
+  color: #fff;
+  margin-top: 20px; /* Tooltip text color */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 10px; /* Font size */
+  white-space: nowrap; /* Prevent line breaks */
+  z-index: 999; /* Ensure tooltip appears above other elements */
+}
+.nav-resume:hover::after {
+  content: "";
+  position: absolute;
+  background-color:rgba(28, 22, 47, .3); /* Tooltip background color */
+  color: #fff;
+  margin-top: 20px; /* Tooltip text color */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 10px; /* Font size */
+  white-space: nowrap; /* Prevent line breaks */
+  z-index: 999; /* Ensure tooltip appears above other elements */
+}
+.icon-resume{
+  display: inline-block;
+  position: relative;
+}
+
+.icon-resume .text::after{
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: 0;
+  height: 56%;
+  width: 100%;
+  transform: rotate(-9deg);
+  opacity: .9;
+  text-decoration: none;
+  color: white;
+}
+.icon-resume .newicon{
+  position: absolute;
+  right: 0;
+  text-shadow: 0px 2px 0px rgba(0,0,0,0.25);
+  color: #fff;
+  background: rgba(28, 22, 47);
+  border-radius: 9px;
+  line-height: 30px;
+  padding: 5px 11px;
+  display: inline-block;
+  transition: .5s;
+  margin-bottom: 15px;
+}
+.icon-resume .newicon:hover{
+  transform: translate(-10px, -32px) rotate(-15deg);
+  color: white;
+}
+.icon-resume .newicon::before{
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -20px;
+  position: absolute;
+}
+.icon-resume .newicon::after{
+  content: "";
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    right: -11px;
+    top: -11px;
+    border-radius: 11px;
+    transition: .5s;
+        opacity: 0;
+    transition-delay: 0s;
+    animation: slide-in-bck-center 1.2s 0.5s cubic-bezier(0.1, 1.96, 0, 0.86) backwards;
 }

@@ -28,17 +28,41 @@ const NavBar = () => {
     <div className='pt-6 w-full z-10 absolute'>
      <div className="relative flex items-center justify-center md:w-708 sm:mx-0 mx-5">
 
-        <div className="bg-nav-bg backdrop-filter backdrop-blur-44 p-4 rounded-lg flex justify-between">
+        <div className="md:bg-nav-bg bg-nav-sm backdrop-filter backdrop-blur-44 p-4 rounded-lg flex justify-between">
          <div className='item-center flex p-0'>
             
          </div>
          <div>
          {isSmallScreen ? (
               <nav className='ml-[15px] relative flex justify-between gap-3'>
-              <Link className='block relative font-semibold leading-5 text-base opacity-100 text-white-bg' href="./TechStack"><FileCheck /></Link>
-              <Link className='block relative font-semibold leading-5 text-base' href="/TechStack"><NotebookPen/></Link>
-              <Link className='block relative font-semibold leading-5 text-base' href="/TechStack"><Github/></Link>
-              <Link className='block relative font-semibold leading-5 text-base' href="/TechStack"><Phone/></Link>
+              <Link className='block relative font-semibold leading-5 text-base mb-3' href="/techstack">
+               <h4>
+                  <span className='icon-resume'>
+                     <span className='text text-[10px]'>Projects</span>
+                     <span className='newicon'><FileCheck/></span>
+                  </span>
+               </h4></Link>
+              <Link className='block relative font-semibold leading-5 text-base mb-3' href="/TechStack">
+               <h4>
+                  <span className='icon-resume'>
+                     <span className='text text-[10px]'>Resume</span>
+                     <span className='newicon'><NotebookPen/></span>
+                  </span>
+               </h4></Link>
+               <Link className='block relative font-semibold leading-5 text-base mb-3' href="/TechStack">
+               <h4>
+                  <span className='icon-resume'>
+                     <span className='text text-[10px]'>Github</span>
+                     <span className='newicon'><Github/></span>
+                  </span>
+               </h4></Link>
+              <Link className='block relative font-semibold leading-5 text-base mb-3' href="/TechStack">
+               <h4>
+                  <span className='icon-resume'>
+                     <span className='text text-[9px]'>Contact</span>
+                     <span className='newicon'><Phone/></span>
+                  </span>
+               </h4></Link>
               
            </nav>
             ) : (

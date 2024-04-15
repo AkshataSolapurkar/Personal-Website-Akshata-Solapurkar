@@ -43,6 +43,8 @@ const config: Config = {
         'tag-black': 'rgba(0, 0, 0, .5)',
         'tag-white': 'rgba(255, 255, 255, .8)',
         'nav-bg': 'rgba(28, 22, 47, .3)',
+        'nav-sm': 'rgba(28, 22, 47)'
+
       },
       fontFamily: {
         'sans': ['Inter', 'sans-serif'],
