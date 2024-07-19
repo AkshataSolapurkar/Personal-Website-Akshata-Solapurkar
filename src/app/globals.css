@@ -162,3 +162,11 @@
     transition-delay: 0s;
     animation: slide-in-bck-center 1.2s 0.5s cubic-bezier(0.1, 1.96, 0, 0.86) backwards;
 }
+.fontGradient {
+  background-image: linear-gradient(90.42deg, #4AB1F1 0.58%, #566CEC 20%, #D749AF 50%, #FF7C51 80%, #FF3366 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% 100%;
+  display: inline-block;
+}
