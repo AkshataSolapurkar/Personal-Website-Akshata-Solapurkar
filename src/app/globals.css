@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 :root {
+  --play: running;
+  --direction: normal;
+  --duration: 49.28s;
+  --delay: 0s;
+  --iteration-count: infinite;
   --bg-light-yellow: #F2F2EE;
   --bg-light-blue: #EDF2FF;
   --bg-light-red: #F2EEEE;
@@ -170,3 +175,93 @@
   background-size: 200% 100%;
   display: inline-block;
 }
+
+/* Add this to your global CSS file */
+
+/* Container setup for marquee */
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  animation: marquee 40s linear infinite; 
+  transition: filter 0.5s ease, transform 0.5s ease; 
+}
+
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+  filter: blur(4px)
+}
+
+
+.marquee-container:hover .message {
+  opacity: 1; 
+  transition: opacity 1s ease;
+  cursor: pointer;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.marquee-text {
+  padding: 0 24px;
+  font-size: 14px; 
+  color: #ecedee;
+  letter-spacing: 2px;
+  opacity: 0.3;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ecedee;
+  font-size: 24px; 
+  opacity: 0; 
+  pointer-events: none;
+}
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 50px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.grid .p-4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: grab;
+}
+
+.grid .p-4:active {
+  cursor: grabbing;
+}
+

@@ -13,12 +13,12 @@ interface justprops{
 const NavBar = () => {
    const [isSmallScreen, setIsSmallScreen] = useState(false);
    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 768); // 768px is the breakpoint for md screen size
+      setIsSmallScreen(window.innerWidth < 768);
     };
   
-    // Listen for resize events to update screen size state
+
     useEffect(() => {
-      handleResize(); // Call it once to set initial state
+      handleResize(); 
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
     }, []);

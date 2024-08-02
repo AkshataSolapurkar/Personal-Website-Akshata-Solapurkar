@@ -5,9 +5,19 @@ import Container from '../shared/container'
 import Image from 'next/image'
 import profilepic from "../../../public/photopersonal.jpeg"
 import AnimatedText from '../shared/Animatedtext'
+import Marquee from './Marquee'
+import ProjectGrid from './Bento'
 
 const Herosection = () => {
+  const projects = [
+    { id: '1', title: 'Project 1', description: 'Description 1' },
+    { id: '2', title: 'Project 2', description: 'Description 2' },
+    { id: '3', title: 'Project 3', description: 'Description 3' },
+    { id: '4', title: 'Project 4', description: 'Description 4' },
+  ];
+  
   return (
+    <>
     <div className='mx-auto my-0 relative w-[780px]'>
       <div className="mt-[32px] py-[16px]">
         <div className="w-full px-[18px]">
@@ -25,14 +35,17 @@ const Herosection = () => {
               <div className="mt-[20px] text-left">
                 <p className="text-[18px] md:text-[20px] font-medium">As a frontend developer, I'm on the lookout for exciting opportunities to blend my love for coding and design. With a curious mind and a passion for crafting engaging user experiences.In my free time, I play, read, and goof around.</p>
                 <p className="text-light-grey mt-[20px] flex gap-2">Building what I love!!!
-                 <Link className="items-center md:justify-center gap-2 font-normal flex" href="https://github.com/AkshataSolapurkar" ><AnimatedText text="@AkshataSolapurkart"/></Link>
+                 <Link className="items-center md:justify-center gap-2 font-normal flex" href="https://github.com/AkshataSolapurkar" ><AnimatedText text="@AkshataSolapurkar"/></Link>
                  </p>
               </div>
             </div>
+            <Marquee/>
+            <ProjectGrid initialProjects={projects}/>
           </div>
         </div>
       </div>
-    </div>
+    </div></>
+    
     
     
   )
