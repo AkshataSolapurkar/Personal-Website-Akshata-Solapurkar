@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      transitionTimingFunction: {
+        'custom-cubic': 'cubic-bezier(0.02, 0.01, 0.47, 1)',
+      },
+      transitionDuration: {
+        '250': '250ms',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
