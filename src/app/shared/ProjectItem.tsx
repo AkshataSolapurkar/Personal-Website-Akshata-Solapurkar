@@ -33,12 +33,12 @@ const ProjectItem: React.FC<{
   return (
     <div
       ref={(node) => drag(drop(node))}
-      className={`p-4 bg-white shadow-md rounded-lg transition-opacity duration-300 ease-in-out transform ${
+      className={`p-4 shadow-md rounded-lg transition-opacity duration-300 ease-in-out transform ${
         isDragging ? 'opacity-0' : 'opacity-100'
       }`}
       style={{
-        backgroundColor: isDragging ? 'transparent' : 'white',
-        border: isDragging ? '2px dashed #ccc' : 'none',
+        backgroundColor: isDragging ? '' : 'white',
+        border: isDragging ? '' : 'none',
       }}
     >
       <h3 className="text-lg font-semibold">{project.title}</h3>

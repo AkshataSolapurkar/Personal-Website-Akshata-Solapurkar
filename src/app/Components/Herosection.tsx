@@ -4,9 +4,13 @@ import { MoveUpRight } from 'lucide-react'
 import Container from '../shared/container'
 import Image from 'next/image'
 import profilepic from "../../../public/photopersonal.jpeg"
-import AnimatedText from '../shared/Animatedtext'
+import dynamic from 'next/dynamic'
 import Marquee from './Marquee'
 import ProjectGrid from "./Bento"
+
+const AnimatedText = dynamic(() => import('../shared/Animatedtext'), {
+  ssr: false,
+});
 
 const Herosection = () => { 
   return (
