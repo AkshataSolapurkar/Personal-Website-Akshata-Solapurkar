@@ -9,7 +9,6 @@ const AnimatedText = ({ text }:any) => {
     config: { duration: 3000 },
     loop: true,
   });
-
   return (
     <animated.div style={gradient} className={`fontGradient`}>
       {text}

@@ -4,18 +4,15 @@ import { MoveUpRight } from 'lucide-react'
 import Container from '../shared/container'
 import Image from 'next/image'
 import profilepic from "../../../public/photopersonal.jpeg"
-import AnimatedText from '../shared/Animatedtext'
+import dynamic from 'next/dynamic'
 import Marquee from './Marquee'
-import ProjectGrid from './Bento'
+import ProjectGrid from "./Bento"
 
-const Herosection = () => {
-  const projects = [
-    { id: '1', title: 'Project 1', description: 'Description 1' },
-    { id: '2', title: 'Project 2', description: 'Description 2' },
-    { id: '3', title: 'Project 3', description: 'Description 3' },
-    { id: '4', title: 'Project 4', description: 'Description 4' },
-  ];
-  
+const AnimatedText = dynamic(() => import('../shared/Animatedtext'), {
+  ssr: false,
+});
+
+const Herosection = () => { 
   return (
     <>
     <div className='mx-auto my-0 relative w-[780px]'>
@@ -40,7 +37,7 @@ const Herosection = () => {
               </div>
             </div>
             <Marquee/>
-            <ProjectGrid initialProjects={projects}/>
+           <ProjectGrid/>
           </div>
         </div>
       </div>

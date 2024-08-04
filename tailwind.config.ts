@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      transitionProperty: {
+        'transform': 'transform',
+        'opacity': 'opacity',
+      },
       transitionTimingFunction: {
         'custom-cubic': 'cubic-bezier(0.02, 0.01, 0.47, 1)',
       },
