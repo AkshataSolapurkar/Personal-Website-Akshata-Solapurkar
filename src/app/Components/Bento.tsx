@@ -1,50 +1,11 @@
-// app/components/ProjectGrid.tsx
-'use client'
-
 import React, { useState } from 'react'
-import { DndProvider, useDrag, useDrop } from 'react-dnd'
+import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-
+import ProjectItem from '../shared/ProjectItem'
 interface Project {
   id: number
   title: string
   description: string
-}
-
-const ProjectItem: React.FC<{
-  project: Project
-  index: number
-  moveProject: (dragIndex: number, hoverIndex: number) => void
-}> = ({ project, index, moveProject }) => {
-  const [{ isDragging }, drag] = useDrag({
-    type: 'project',
-    item: { index },
-    collect: (monitor) => ({
-      isDragging: monitor.isDragging(),
-    }),
-  })
-
-  const [, drop] = useDrop({
-    accept: 'project',
-    hover: (item: { index: number }) => {
-      if (item.index !== index) {
-        moveProject(item.index, index)
-        item.index = index
-      }
-    },
-  })
-
-  return (
-    <div
-      ref={(node) => drag(drop(node))}
-      className={`p-4 bg-white shadow-md rounded-lg ${
-        isDragging ? 'opacity-50' : ''
-      }`}
-    >
-      <h3 className="text-lg font-semibold">{project.title}</h3>
-      <p>{project.description}</p>
-    </div>
-  )
 }
 
 const ProjectGrid: React.FC = () => {
@@ -65,14 +26,13 @@ const ProjectGrid: React.FC = () => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="grid grid-cols-2 gap-4 text-black">
+      <div className="grid grid-cols-2 gap-4 p-4">
         {projects.map((project, index) => (
           <ProjectItem
             key={project.id}
             project={project}
             index={index}
             moveProject={moveProject}
-            
           />
         ))}
       </div>
