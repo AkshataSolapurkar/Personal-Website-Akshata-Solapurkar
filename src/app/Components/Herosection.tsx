@@ -19,7 +19,7 @@ const Herosection = () => {
       <div className="mt-[32px] py-[16px]">
         <div className="w-full px-[18px]">
           <div className="py-[4px] px-[16px]">
-            <div className="flex flex-col">
+            <div className="flex mb-7 flex-col">
 
               <div className='flex gap-6 items-center'>
               <Image alt='profile' src={profilepic} width="100" className='rounded-full'/>

@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import ProjectItem from '../shared/ProjectItem'
+import dynamic from 'next/dynamic'
+import Link from 'next/link'
+
 
 interface Project {
   id: number
@@ -28,6 +31,22 @@ const ProjectGrid: React.FC = () => {
 
   return (
     <DndProvider backend={HTML5Backend}>
+      <div className='flex justify-between mt-[40px] mb-[5px]'>
+              <h1 className='opacity-70 text-light-grey text-[16px] capitalize font-semibold'>PROJECTS / WORK</h1>
+              <Link
+                rel="stylesheet"
+                className="fontGradient group relative inline-flex items-center"
+                href="https://github.com/AkshataSolapurkar"
+              >
+                <span className="text transition-all duration-300 ease-out group-hover:mr-2">
+                  All Work
+                </span>
+                <span className="arrow opacity-0 transform -translate-x-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-0">
+                  ►
+                </span>
+              </Link>
+
+            </div>
       <div className="flex flex-wrap -mx-4">
         {projects.map((project, index) => (
           <div key={project.id} className="w-full md:w-1/2 ">
