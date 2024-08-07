@@ -12,6 +12,9 @@ const config: Config = {
         'transform': 'transform',
         'opacity': 'opacity',
       },
+      letterSpacing: {
+        tighter: '-0.25px',
+      },
       transitionTimingFunction: {
         'custom-cubic': 'cubic-bezier(0.02, 0.01, 0.47, 1)',
       },

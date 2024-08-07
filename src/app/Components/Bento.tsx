@@ -2,18 +2,20 @@ import React, { useState } from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import ProjectItem from '../shared/ProjectItem'
+
 interface Project {
   id: number
   title: string
   description: string
+  picture: string
 }
 
 const ProjectGrid: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([
-    { id: 1, title: 'Project 1', description: 'Description for Project 1' },
-    { id: 2, title: 'Project 2', description: 'Description for Project 2' },
-    { id: 3, title: 'Project 3', description: 'Description for Project 3' },
-    { id: 4, title: 'Project 4', description: 'Description for Project 4' },
+    { id: 1, title: 'Leadlly Website', description: 'Fully responsive UI design for Leadlly first version website.', picture: '/leadllywebsite.png' },
+    { id: 2, title: 'Payout Dashboard', description: 'A sleek, fully responsive UI for managing and visualizing payout transactions efficiently.', picture: '/PayoutDadboard.png' },
+    { id: 3, title: 'CopperX Website', description: 'A fully responsive UI design showcasing CopperX’s brand identity and features.', picture: '/copperx.jpg' },
+    { id: 4, title: 'Image Generator', description: 'AI-powered image generator using OpenAI SDK for creative outputs.', picture: '/ImageGenerator.png' },
   ])
 
   const moveProject = (dragIndex: number, hoverIndex: number) => {
@@ -26,14 +28,15 @@ const ProjectGrid: React.FC = () => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="grid grid-cols-2 gap-4 p-4">
+      <div className="flex flex-wrap -mx-4">
         {projects.map((project, index) => (
-          <ProjectItem
-            key={project.id}
-            project={project}
-            index={index}
-            moveProject={moveProject}
-          />
+          <div key={project.id} className="w-full md:w-1/2 ">
+            <ProjectItem
+              project={project}
+              index={index}
+              moveProject={moveProject}
+            />
+          </div>
         ))}
       </div>
     </DndProvider>
